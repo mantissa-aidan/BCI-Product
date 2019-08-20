@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Labelled Test Data_data" version="1.3.0" audacityversion="2.3.2" sel0="27.7975883429" sel1="29.1294138286" vpos="0" h="12.6523421143" zoom="58.5662317148" rate="10000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags/>
+	<wavetrack name="BYB_Recording_2019-01-18_18.15.16" channel="2" linked="0" mute="0" solo="0" height="696" minimized="0" isSelected="1" rate="10000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="597614">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808d06.au" len="262144" min="-0.045471" max="0.094025" rms="0.014587"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0808901.au" len="262144" min="-0.061707" max="0.084869" rms="0.013319"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e0808089.au" len="73326" min="-0.048553" max="0.033447" rms="0.010273"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<labeltrack name="Label Track" numlabels="29" height="73" minimized="0" isSelected="0">
+		<label t="0.6317633714" t1="1.7928420000" title="constant"/>
+		<label t="1.6220951429" t1="2.8514725143" title="constant"/>
+		<label t="3.9784017714" t1="5.0370322857" title="right"/>
+		<label t="5.6004969143" t1="6.5396046286" title="constant"/>
+		<label t="7.2396667429" t1="8.2470732000" title="right"/>
+		<label t="8.7593137714" t1="9.6813468000" title="constant"/>
+		<label t="9.1349568571" t1="10.1082139429" title="constant"/>
+		<label t="10.6546038857" t1="11.8839812571" title="left"/>
+		<label t="12.1230268571" t1="13.1133586286" title="constant"/>
+		<label t="13.4719270286" t1="14.6330056571" title="left"/>
+		<label t="15.2989184000" t1="16.4258476571" title="constant"/>
+		<label t="16.8697894857" t1="17.5698516000" title="constant"/>
+		<label t="17.7235237714" t1="18.8333783429" title="left"/>
+		<label t="19.2431708000" t1="20.4896228571" title="left"/>
+		<label t="20.4896228571" t1="21.5482533714" title="constant"/>
+		<label t="22.6410332571" t1="24.4509499429" title="left"/>
+		<label t="24.3655765143" t1="25.5949538857" title="constant"/>
+		<label t="25.9193729143" t1="27.0804515429" title="right"/>
+		<label t="28.0195592571" t1="29.1294138286" title="constant"/>
+		<label t="31.2808242286" t1="32.2882306857" title="right"/>
+		<label t="33.8932511429" t1="35.2421513143" title="left"/>
+		<label t="37.0349933143" t1="38.2472960000" title="left"/>
+		<label t="40.0572126857" t1="41.3890381714" title="left"/>
+		<label t="43.3697017143" t1="44.4795562857" title="right"/>
+		<label t="45.4528133714" t1="46.5626679429" title="left"/>
+		<label t="47.0919832000" t1="48.1676884000" title="constant"/>
+		<label t="49.2433936000" t1="50.2849494286" title="constant"/>
+		<label t="53.5291397143" t1="54.7072930286" title="right"/>
+		<label t="57.0635996571" t1="58.1563795429" title="right"/>
+	</labeltrack>
+</project>
