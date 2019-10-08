@@ -1,0 +1,285 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+```{r}
+devtools::install_github("rstudio/keras")
+
+library(keras)
+install_keras()
+install_tensorflow()
+```
+
+```{r}
+library(tuneR)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+wavefile <- readWave("data/BYB_Recording_2019-01-18_18.01.34.wav")
+wavefile
+time <- seq_len(length(wavefile))/wavefile@samp.rate
+eventTime <- c(7.4, 14.8, 19.2, 23.3, 26.8, 31.8, 36.2, 46, 49.6, 53, 57.1)
+eventType <- c("R", "L", "L", "R", "R", "L", "L", "R", "R", "L", "L")
+eventTable <- data.frame(eventTime, eventType)
+eventTable
+```
+
+```{r}
+df <- data.frame(Y = wavefile@left, time = time)
+class <- rep("none", nrow(df))
+class_time <- rep(NA, nrow(df))
+event_id <- rep(NA, nrow(df))
+
+for (i in 1:nrow(eventTable)) {
+    t_idx <- (time < (eventTable[i, 1] + 0.5)) & (time > (eventTable[i, 1] - 
+        0.5))
+    line_col <- ifelse(eventTable[i, 2] == "R", "right", "left")
+    class[t_idx] <- line_col
+    class_time[t_idx] <- seq_len(sum(t_idx))
+    event_id[t_idx] <- i
+}
+event_id
+
+time_none <- df$time[which(class == "none")]
+diff_time_none <- diff(time_none)
+idx_event <- which(diff_time_none > 0.5)
+time_none_point <- time_none[idx_event] - 1
+
+for (i in 1:length(time_none_point)) {
+    t_idx <- (time < (time_none_point[i] + 0.5)) & (time > (time_none_point[i] - 
+        0.5))
+    line_col <- "none_selected"
+    class[t_idx] <- line_col
+    class_time[t_idx] <- seq_len(sum(t_idx))
+    event_id[t_idx] <- i + 12
+}
+
+df$class <- factor(class, levels = c("right", "left", "none_selected", "none"))
+df$class_time <- class_time
+df$event_id <- event_id
+
+ggplot(df, aes(x = time, y = Y, col = class, group = 1)) + geom_line() + scale_color_manual(values = c("#E41A1C", 
+    "#377EB8", "grey", "black")) + theme_bw()
+```
+
+```{r}
+library(tsfeatures)
+
+Y <- df$Y
+
+Y_list <- list()
+for (i in 1:nrow(eventTable)) {
+    t_idx <- (time < (eventTable[i, 1] + 0.5)) & (time > (eventTable[i, 1] - 
+        0.5))
+    Y_list[[i]] <- Y[t_idx]
+}
+
+for (i in 1:length(time_none_point)) {
+    t_idx <- (time < (time_none_point[i] + 0.5)) & (time > (time_none_point[i] - 
+        0.5))
+    Y_list <- append(Y_list, list(Y[t_idx]))
+}
+
+## cat('Crossing point')
+unlist(lapply(Y_list, function(x) crossing_points(x)))
+
+```
+```{r}
+Y_features <- cbind(tsfeatures(Y_list, c("acf_features", "entropy", "lumpiness", 
+    "flat_spots", "crossing_points")), tsfeatures(Y_list, "max_kl_shift", width = 48), 
+    tsfeatures(Y_list, c("mean", "var"), scale = FALSE, na.rm = TRUE), tsfeatures(Y_list, 
+        c("max_level_shift", "max_var_shift"), trim = TRUE))
+
+
+
+Y_features$class <- c(as.character(eventTable$eventType), rep("none", length(time_none_point)))
+
+Y_features
+
+```
+```{r}
+wavefile2 <- readWave("data/BYB_Recording_2019-01-18_18.15.16.wav")
+wavefile2
+
+time2 <- seq_len(length(wavefile2))/wavefile@samp.rate
+eventTime2 <- c(4, 7, 11, 14, 18, 23, 26, 31, 34, 37, 41, 44, 46, 54, 57)
+eventType2 <- c("R", "R", "L", "R", "L", "LR", "R", "R", "L", "L", "L", "R", 
+    "L", "R", "R")
+
+eventTable2 <- data.frame(eventTime2, eventType2)
+eventTable2
+```
+```{r}
+df <- data.frame(Y = wavefile2@left, time = time2)
+class <- rep("none", nrow(df))
+class_time <- rep(NA, nrow(df))
+event_id <- rep(NA, nrow(df))
+
+for (i in 1:nrow(eventTable2)) {
+    t_idx <- (time2 < (eventTable2[i, 1] + 0.5)) & (time2 > (eventTable2[i, 
+        1] - 0.5))
+    line_col <- ifelse(eventTable2[i, 2] == "R", "right", ifelse(eventTable2[i, 
+        2] == "L", "left", "left_right"))
+    class[t_idx] <- line_col
+    class_time[t_idx] <- seq_len(sum(t_idx))
+    event_id[t_idx] <- i
+}
+
+time_none <- df$time[which(class == "none")]
+diff_time_none <- diff(time_none)
+idx_event <- which(diff_time_none > 0.5)
+time_none_point <- time_none[idx_event] - 1
+
+for (i in 1:length(time_none_point)) {
+    t_idx <- (time2 < (time_none_point[i] + 0.5)) & (time2 > (time_none_point[i] - 
+        0.5))
+    line_col <- "none_selected"
+    class[t_idx] <- line_col
+    class_time[t_idx] <- seq_len(sum(t_idx))
+    event_id[t_idx] <- i + 15
+}
+
+df$class <- factor(class, levels = c("right", "left", "left_right", "none_selected", 
+    "none"))
+df$class_time <- class_time
+df$event_id <- event_id
+
+ggplot(df, aes(x = time, y = Y, col = class, group = 1)) + geom_line() + scale_color_manual(values = c("#E41A1C", 
+    "#377EB8", "purple", "grey", "black")) + theme_bw()
+```
+
+```{r}
+Y2 <- df$Y
+Y_list2 <- list()
+for (i in 1:nrow(eventTable2)) {
+    t_idx <- (time2 < (eventTable2[i, 1] + 0.5)) & (time2 > (eventTable2[i, 
+        1] - 0.5))
+    Y_list2[[i]] <- Y2[t_idx]
+    
+}
+
+for (i in 1:length(time_none_point)) {
+    t_idx <- (time2 < (time_none_point[i] + 0.5)) & (time2 > (time_none_point[i] - 
+        0.5))
+    Y_list2 <- append(Y_list2, list(Y2[t_idx]))
+}
+
+
+
+Y2_features <- cbind(tsfeatures(Y_list2, c("acf_features", "entropy", "lumpiness", 
+    "flat_spots", "crossing_points")), tsfeatures(Y_list2, "max_kl_shift", width = 48), 
+    tsfeatures(Y_list2, c("mean", "var"), scale = FALSE, na.rm = TRUE), tsfeatures(Y_list2, 
+        c("max_level_shift", "max_var_shift"), trim = TRUE))
+
+
+
+Y2_features$class <- c(as.character(eventTable2$eventType), rep("none", length(time_none_point)))
+```
+
+
+
+
+
+```{r}
+Y_features_rbind <- rbind(Y_features, Y2_features)
+Y_features_rbind <- Y_features_rbind[Y_features_rbind$class != "LR", ]
+
+m <- as.matrix((Y_features_rbind[, 1:18]))
+
+## scale from 0 to 1
+range01 <- function(x) {
+    (x - min(x))/(max(x) - min(x))
+}
+dat.scaled <- apply(m, 2, range01)
+rownames(dat.scaled) <- rownames(m)
+range(dat.scaled)
+
+
+set.seed(1)
+library(keras)
+K <- keras::backend()
+
+input_size <- ncol(dat.scaled)
+hidden_size <- 64  ## 64 dimensional hidden layer
+code_size <- 2  ## 2 dimensional encoding
+
+input <- layer_input(shape = c(input_size))
+
+hidden_1 <- layer_dense(input, hidden_size) %>% layer_activation_leaky_relu()
+
+code <- layer_dense(hidden_1, code_size) %>% layer_activation_leaky_relu()
+
+hidden_2 <- layer_dense(code, hidden_size) %>% layer_activation_leaky_relu()
+
+output <- layer_dense(hidden_2, input_size, activation = "sigmoid")
+
+
+## input and output should be the same
+autoencoder <- keras_model(input, output)
+## encoder from input to code space
+encoder <- keras_model(input, code)
+
+## Learn
+autoencoder %>% compile(optimizer = "adam", loss = "mean_squared_error")
+autoencoder %>% fit(dat.scaled, dat.scaled, shuffle = TRUE, epochs = 500, batch_size = 100, 
+    validation_data = list(dat.scaled, dat.scaled))
+
+dat_encoded <- predict(encoder, dat.scaled, batch_size = 100)
+rownames(dat_encoded) <- rownames(dat.scaled)
+colnames(dat_encoded) <- c("latent 1", "latent 2")
+
+```
+
+```{r}
+set.seed(2019)
+train_idx <- sample(nrow(Y_features_rbind), round(0.8 * nrow(Y_features_rbind)))
+
+X_train <- as.matrix((Y_features_rbind[train_idx, 1:18]))
+y_train <- as.numeric(as.factor(Y_features_rbind[train_idx, 19]))
+
+X_test <- as.matrix((Y_features_rbind[-train_idx, 1:18]))
+y_test <- as.numeric(as.factor(Y_features_rbind[-train_idx, 19]))
+
+
+range01 <- function(x) {
+    (x - min(x))/(max(x) - min(x))
+}
+X_train <- apply(X_train, 2, range01)
+X_test <- apply(X_test, 2, range01)
+
+
+
+model <- keras_model_sequential()
+model %>% layer_dense(units = 256, activation = "relu", input_shape = c(18)) %>% 
+    layer_dense(units = 64, activation = "relu") %>% layer_dense(units = 10, 
+    activation = "softmax")
+```
+
+
+```{r}
+Y_features_rbind$DL1 <- dat_encoded[, 1]
+Y_features_rbind$DL2 <- dat_encoded[, 2]
+
+ggplot(Y_features_rbind, aes(x = DL1, y = DL2, colour = class)) + geom_point(size = 5) + 
+    theme_bw() + theme(aspect.ratio = 1) + scale_color_brewer(palette = "Set1") + 
+    NULL
+```
+```{r}
+model %>% compile(loss = "sparse_categorical_crossentropy", optimizer = optimizer_rmsprop(), 
+    metrics = c("accuracy"))
+
+
+
+model_fit <- model %>% fit(X_train, y_train, epochs = 45, batch_size = 10, validation_split = 0.2)
+
+model_fit
+```
+
+
+
+
