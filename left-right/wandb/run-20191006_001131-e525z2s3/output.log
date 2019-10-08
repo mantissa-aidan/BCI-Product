@@ -1,0 +1,162 @@
+2019-10-06 11:11:34.360669: I T:\src\github\tensorflow\tensorflow\core\platform\cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2019-10-06 11:11:34.634544: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:1356] Found device 0 with properties: 
+name: GeForce GTX 780 Ti major: 3 minor: 5 memoryClockRate(GHz): 1.0455
+pciBusID: 0000:01:00.0
+totalMemory: 3.00GiB freeMemory: 2.45GiB
+2019-10-06 11:11:34.635048: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:1435] Adding visible gpu devices: 0
+2019-10-06 11:11:34.908982: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-10-06 11:11:34.909170: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:929]      0 
+2019-10-06 11:11:34.909368: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:942] 0:   N 
+2019-10-06 11:11:34.909684: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2174 MB memory) -> physical GPU (device: 0, name: GeForce GTX 780 Ti, pci bus id: 0000:01:00.0, compute capability: 3.5)
+Using TensorFlow backend.
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:521: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:522: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+wandb: ERROR wandb.init hasn't been called, can't configure run
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 200, 200, 16)      2368      
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 100, 100, 16)      0         
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 100, 100, 16)      64        
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 100, 100, 32)      12832     
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 50, 50, 32)        0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 50, 50, 32)        128       
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 50, 50, 64)        18496     
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 25, 25, 64)        0         
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 25, 25, 64)        256       
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 25, 25, 128)       73856     
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 13, 13, 128)       0         
+_________________________________________________________________
+batch_normalization_4 (Batch (None, 13, 13, 128)       512       
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 13, 13, 128)       147584    
+_________________________________________________________________
+max_pooling2d_5 (MaxPooling2 (None, 7, 7, 128)         0         
+_________________________________________________________________
+batch_normalization_5 (Batch (None, 7, 7, 128)         512       
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 7, 7, 256)         295168    
+_________________________________________________________________
+max_pooling2d_6 (MaxPooling2 (None, 4, 4, 256)         0         
+_________________________________________________________________
+batch_normalization_6 (Batch (None, 4, 4, 256)         1024      
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 4096)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 1024)              4195328   
+_________________________________________________________________
+batch_normalization_7 (Batch (None, 1024)              4096      
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 1024)              0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 3)                 3075      
+=================================================================
+Total params: 4,755,299
+Trainable params: 4,752,003
+Non-trainable params: 3,296
+_________________________________________________________________
+Found 400 images belonging to 3 classes.
+Found 30 images belonging to 3 classes.
+Epoch 1/100
+
+ 1/12 [=>............................] - ETA: 30s - loss: 3.3269 - acc: 0.1250
+ 2/12 [====>.........................] - ETA: 14s - loss: 2.5070 - acc: 0.4219
+ 3/12 [======>.......................] - ETA: 8s - loss: 2.4386 - acc: 0.4896 
+ 4/12 [=========>....................] - ETA: 6s - loss: 2.0302 - acc: 0.5703
+ 5/12 [===========>..................] - ETA: 4s - loss: 1.7028 - acc: 0.6438
+ 6/12 [==============>...............] - ETA: 3s - loss: 1.4417 - acc: 0.6927
+ 7/12 [================>.............] - ETA: 2s - loss: 1.3461 - acc: 0.7143
+ 8/12 [===================>..........] - ETA: 1s - loss: 1.2364 - acc: 0.7383
+ 9/12 [=====================>........] - ETA: 1s - loss: 1.1546 - acc: 0.7500
+10/12 [========================>.....] - ETA: 0s - loss: 1.0609 - acc: 0.7656
+11/12 [==========================>...] - ETA: 0s - loss: 0.9907 - acc: 0.7784
+12/12 [==============================] - 4s 326ms/step - loss: 0.9187 - acc: 0.7912 - val_loss: 1.3500 - val_acc: 0.7000
+wandb: WARNING No validation_data set, pass a generator to the callback.
+
+Epoch 00001: val_acc improved from -inf to 0.70000, saving model to left-right-192.h5
+Epoch 2/100
+
+ 1/12 [=>............................] - ETA: 0s - loss: 0.1823 - acc: 0.9062
+ 2/12 [====>.........................] - ETA: 0s - loss: 0.1843 - acc: 0.9219
+ 3/12 [======>.......................] - ETA: 0s - loss: 0.2052 - acc: 0.9167
+ 4/12 [=========>....................] - ETA: 0s - loss: 0.1770 - acc: 0.9297
+ 6/12 [==============>...............] - ETA: 0s - loss: 0.1354 - acc: 0.9427
+ 7/12 [================>.............] - ETA: 0s - loss: 0.1389 - acc: 0.9464
+ 8/12 [===================>..........] - ETA: 0s - loss: 0.1329 - acc: 0.9492
+ 9/12 [=====================>........] - ETA: 0s - loss: 0.1243 - acc: 0.9514
+10/12 [========================>.....] - ETA: 0s - loss: 0.1126 - acc: 0.9563
+11/12 [==========================>...] - ETA: 0s - loss: 0.1025 - acc: 0.9602
+12/12 [==============================] - 1s 74ms/step - loss: 0.1259 - acc: 0.9584 - val_loss: 0.0218 - val_acc: 1.0000
+wandb: WARNING No validation_data set, pass a generator to the callback.
+
+Epoch 00002: val_acc improved from 0.70000 to 1.00000, saving model to left-right-192.h5
+Epoch 3/100
+
+ 1/12 [=>............................] - ETA: 0s - loss: 0.6571 - acc: 0.9062
+ 2/12 [====>.........................] - ETA: 0s - loss: 0.3462 - acc: 0.9531
+ 3/12 [======>.......................] - ETA: 0s - loss: 0.2378 - acc: 0.9688
+ 4/12 [=========>....................] - ETA: 0s - loss: 0.2094 - acc: 0.9609
+ 5/12 [===========>..................] - ETA: 0s - loss: 0.1882 - acc: 0.9625
+ 6/12 [==============>...............] - ETA: 0s - loss: 0.1758 - acc: 0.9635
+ 7/12 [================>.............] - ETA: 0s - loss: 0.1838 - acc: 0.9598
+ 8/12 [===================>..........] - ETA: 0s - loss: 0.1665 - acc: 0.9609
+ 9/12 [=====================>........] - ETA: 0s - loss: 0.1516 - acc: 0.9653
+10/12 [========================>.....] - ETA: 0s - loss: 0.1722 - acc: 0.9656
+11/12 [==========================>...] - ETA: 0s - loss: 0.1654 - acc: 0.9631
+12/12 [==============================] - 1s 76ms/step - loss: 0.1520 - acc: 0.9661 - val_loss: 0.0629 - val_acc: 0.9667
+wandb: WARNING No validation_data set, pass a generator to the callback.
+
+Epoch 00003: val_acc did not improve from 1.00000
+Epoch 4/100
+
+ 1/12 [=>............................] - ETA: 0s - loss: 0.1523 - acc: 0.9062
+ 2/12 [====>.........................] - ETA: 0s - loss: 0.0832 - acc: 0.9531
+ 4/12 [=========>....................] - ETA: 0s - loss: 0.0562 - acc: 0.9688
+ 5/12 [===========>..................] - ETA: 0s - loss: 0.0465 - acc: 0.9750
+ 6/12 [==============>...............] - ETA: 0s - loss: 0.0401 - acc: 0.9792
+ 7/12 [================>.............] - ETA: 0s - loss: 0.0349 - acc: 0.9821
+ 9/12 [=====================>........] - ETA: 0s - loss: 0.0330 - acc: 0.9861
+10/12 [========================>.....] - ETA: 0s - loss: 0.0301 - acc: 0.9875
+11/12 [==========================>...] - ETA: 0s - loss: 0.0288 - acc: 0.9886
+12/12 [==============================] - 1s 75ms/step - loss: 0.0265 - acc: 0.9895 - val_loss: 0.0792 - val_acc: 0.9333
+wandb: WARNING No validation_data set, pass a generator to the callback.
+
+Epoch 00004: val_acc did not improve from 1.00000
+Epoch 5/100
+
+ 1/12 [=>............................] - ETA: 0s - loss: 0.1353 - acc: 0.9375
+ 2/12 [====>.........................] - ETA: 0s - loss: 0.0993 - acc: 0.9375
+ 3/12 [======>.......................] - ETA: 0s - loss: 0.0742 - acc: 0.9583
+ 4/12 [=========>....................] - ETA: 0s - loss: 0.0557 - acc: 0.9688
+ 5/12 [===========>..................] - ETA: 0s - loss: 0.0474 - acc: 0.9750
+ 6/12 [==============>...............] - ETA: 0s - loss: 0.0509 - acc: 0.9740
+ 7/12 [================>.............] - ETA: 0s - loss: 0.0440 - acc: 0.9777
+ 8/12 [===================>..........] - ETA: 0s - loss: 0.0487 - acc: 0.9766
+ 9/12 [=====================>........] - ETA: 0s - loss: 0.0514 - acc: 0.9757
+11/12 [==========================>...] - ETA: 0s - loss: 0.0451 - acc: 0.9801
+12/12 [==============================] - 1s 77ms/step - loss: 0.0583 - acc: 0.9765 - val_loss: 0.1121 - val_acc: 0.9667
+wandb: WARNING No validation_data set, pass a generator to the callback.
+
+Epoch 00005: val_acc did not improve from 1.00000
+Epoch 00005: early stopping

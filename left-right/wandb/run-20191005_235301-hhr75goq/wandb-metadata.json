@@ -1,0 +1,22 @@
+{
+    "root": "C:\\Users\\aidan\\Desktop\\left-right",
+    "program": "python",
+    "startedAt": "2019-10-05T23:52:59.718629",
+    "host": "aidanTower",
+    "username": "aidan",
+    "os": "Windows-10-10.0.18362-SP0",
+    "python": "3.6.8",
+    "executable": "c:\\users\\aidan\\appdata\\local\\programs\\python\\python36\\python.exe",
+    "gpu": "GeForce GTX 780 Ti",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "args": [
+        "run",
+        "python",
+        "cnn_model.py"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "clirun",
+    "heartbeatAt": "2019-10-05T23:53:01.120613"
+}

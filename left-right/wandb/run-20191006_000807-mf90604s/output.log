@@ -1,0 +1,85 @@
+2019-10-06 11:08:10.610398: I T:\src\github\tensorflow\tensorflow\core\platform\cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2019-10-06 11:08:10.800419: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:1356] Found device 0 with properties: 
+name: GeForce GTX 780 Ti major: 3 minor: 5 memoryClockRate(GHz): 1.0455
+pciBusID: 0000:01:00.0
+totalMemory: 3.00GiB freeMemory: 2.45GiB
+2019-10-06 11:08:10.800843: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:1435] Adding visible gpu devices: 0
+2019-10-06 11:08:11.090736: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-10-06 11:08:11.090919: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:929]      0 
+2019-10-06 11:08:11.091123: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:942] 0:   N 
+2019-10-06 11:08:11.091344: I T:\src\github\tensorflow\tensorflow\core\common_runtime\gpu\gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2174 MB memory) -> physical GPU (device: 0, name: GeForce GTX 780 Ti, pci bus id: 0000:01:00.0, compute capability: 3.5)
+Using TensorFlow backend.
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:521: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+C:\Users\aModel: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d_1 (Conv2D)            (None, 200, 200, 16)      2368      
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 100, 100, 16)      0         
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 100, 100, 16)      64        
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 100, 100, 32)      12832     
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 50, 50, 32)        0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 50, 50, 32)        128       
+_______________________________________________________________idan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:522: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\tensorflow\python\framework\dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Traceback (most recent call last):
+  __
+conv2d_3 (Conv2D)            (None, 50, 50, 64)        18496     
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 25, 25, 64)        0         
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 25, 25, 64)        256       
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 25, 25, 128)       73856     
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 13, 13, 128)       0         
+_________________________________________________________________
+batch_normalization_4 (Batch (None, 13, 13, 128)       512       
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 13, 13, 128)       147584    
+_________________________________________________________________
+max_pooling2d_5 (MaxPooling2 (None, 7, 7, 128)         0         
+_______________File "cnn_model.py", line 65, in <module>
+    class_mode='sparse')
+  File "C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 540, in flow_from_directory
+    interpolation=interpolation
+  File "C:\Users\aidan\AppData\Local\Programs\Python\Python36\lib\site-packages\keras_preprocessing\image\directory_iterator.py", line 106, in __init__
+    for subdir in sorted(os.listdir(directory)):
+FileNotFoundError: [WinError 3] The system cannot find the path specified: '/orig_features'
+__________________________________________________
+batch_normalization_5 (Batch (None, 7, 7, 128)         512       
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 7, 7, 256)         295168    
+_________________________________________________________________
+max_pooling2d_6 (MaxPooling2 (None, 4, 4, 256)         0         
+_________________________________________________________________
+batch_normalization_6 (Batch (None, 4, 4, 256)         1024      
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 4096)              0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 1024)              4195328   
+_________________________________________________________________
+batch_normalization_7 (Batch (None, 1024)              4096      
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 1024)              0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 3)                 3075      
+=================================================================
+Total params: 4,755,299
+Trainable params: 4,752,003
+Non-trainable params: 3,296
+_________________________________________________________________

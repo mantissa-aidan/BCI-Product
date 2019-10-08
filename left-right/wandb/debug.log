@@ -1,0 +1,93 @@
+2019-10-06 11:11:31,038 DEBUG   MainThread:184372 [wandb_config.py:_load_defaults():84] no defaults not found in config-defaults.yaml
+2019-10-06 11:11:31,041 DEBUG   MainThread:184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:31,548 DEBUG   MainThread:184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 226
+2019-10-06 11:11:31,574 DEBUG   MainThread:184372 [util.py:is_cygwin_git():319] Failed checking if running in CYGWIN due to: FileNotFoundError(2, 'The system cannot find the file specified', None, 2, None)
+2019-10-06 11:11:31,576 DEBUG   MainThread:184372 [git_repo.py:repo():30] git repository is invalid
+2019-10-06 11:11:31,596 DEBUG   MainThread:184372 [run_manager.py:__init__():526] Initialized sync for None/e525z2s3
+2019-10-06 11:11:31,598 DEBUG   MainThread:184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): pypi.org:443
+2019-10-06 11:11:31,687 DEBUG   MainThread:184372 [connectionpool.py:_make_request():393] https://pypi.org:443 "GET /pypi/wandb/json HTTP/1.1" 200 34724
+2019-10-06 11:11:31,714 INFO    MainThread:184372 [run_manager.py:init_run():903] system metrics and metadata threads started
+2019-10-06 11:11:31,740 INFO    MainThread:184372 [run_manager.py:init_run():937] upserting run before process can begin, waiting at most 10 seconds
+2019-10-06 11:11:31,752 DEBUG   Thread-10 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:31,997 DEBUG   Thread-10 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 506
+2019-10-06 11:11:32,001 INFO    Thread-10 :184372 [run_manager.py:_upsert_run():999] saving patches
+2019-10-06 11:11:32,002 INFO    Thread-10 :184372 [run_manager.py:_upsert_run():1001] saving pip packages
+2019-10-06 11:11:32,007 INFO    Thread-10 :184372 [run_manager.py:_upsert_run():1003] initializing streaming files api
+2019-10-06 11:11:32,008 INFO    Thread-10 :184372 [run_manager.py:_upsert_run():1010] unblocking file change observer, beginning sync with W&B servers
+2019-10-06 11:11:32,034 INFO    MainThread:184372 [run_manager.py:_sync_etc():1210] entering loop for messages from user process
+2019-10-06 11:11:32,035 DEBUG   Thread-18 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:32,256 DEBUG   Thread-18 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 46
+2019-10-06 11:11:32,578 INFO    Thread-6  :184372 [run_manager.py:_on_file_created():662] file/dir created: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-metadata.json
+2019-10-06 11:11:32,579 INFO    Thread-6  :184372 [run_manager.py:_on_file_created():662] file/dir created: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\requirements.txt
+2019-10-06 11:11:32,580 INFO    Thread-6  :184372 [run_manager.py:_on_file_created():662] file/dir created: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:32,588 DEBUG   Thread-19 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:32,588 DEBUG   Thread-43 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:32,823 DEBUG   Thread-43 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 766
+2019-10-06 11:11:32,825 DEBUG   Thread-19 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 774
+2019-10-06 11:11:32,831 DEBUG   Thread-43 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): storage.googleapis.com:443
+2019-10-06 11:11:32,832 DEBUG   Thread-19 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): storage.googleapis.com:443
+2019-10-06 11:11:33,362 DEBUG   Thread-43 :184372 [connectionpool.py:_make_request():393] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/z3467842/uncategorized/e525z2s3/requirements.txt?Expires=1570320751&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=N3OFYEAvBj0FCcah6UNu3r0kWhplTxA581ECXuwFY69og0S8ifm1yzcZ5Zx0C4Xds5RgQPdQcv6%2BlTn7KhbU3R2%2Fip3cLJkir4Ktp0cg0qWXjvAUTU4TP04XOquXip9aHMg1b6aRzQtnhdAz%2Bthf2w7ZgP%2Fqm%2FTExOYFsErBkPZXR6mBqnkRIcF9k4S3ZvHITmIUD5kHIFwKybhvonJjDEMLzMvxPnj6bUgEVTKgcZaxaLrq2qhrJyXy5e1OWYjtdlAVqJ%2B%2FXRn8ZURVoS44MBn7eFMqPrUV4eE%2ByEwU3RqE90Yftprgz4RmPbveyCfN7BzXSeDdfBEjkA6X89k4tg%3D%3D HTTP/1.1" 200 0
+2019-10-06 11:11:33,364 DEBUG   Thread-19 :184372 [connectionpool.py:_make_request():393] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/z3467842/uncategorized/e525z2s3/wandb-metadata.json?Expires=1570320751&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=GqS5jGH%2FE7GDTypiYm0Ghw780LNb38z388tlmciIiiSF7lTPYTPlCPPQS0I34H3BRUi0BtkbERLe4G2k57YC2lYZfNtNxfMwaktOXG4G4GVtImJiwyCnR5z5EnbwbHYPdWibVwE5k%2FTeT1Pdn71QuJDZn%2FKcPZY5NehgpZBeLzm391QE1Egf4tmPqT1f1IKcjlLRNZdjw2YhGmUyG7kUQUyX4pX6zSkR6cNxnWA%2BHjMmoug502urkfVPrSq2kE1OQDVRHUd1sX8jwlO%2BHRSGiY660lvgcLlu%2F9dl4a7eHGaiHJiUfunXZ%2F%2Bqx2KG%2B4iJAxSTi21e6v8cEHqWWlHj9A%3D%3D HTTP/1.1" 200 0
+2019-10-06 11:11:34,029 DEBUG   Thread-11 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:34,278 DEBUG   Thread-11 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /files/z3467842/uncategorized/e525z2s3/file_stream HTTP/1.1" 200 311
+2019-10-06 11:11:34,583 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:35,588 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:36,593 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:36,593 INFO    Thread-6  :184372 [run_manager.py:_on_file_created():662] file/dir created: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-history.jsonl
+2019-10-06 11:11:36,693 DEBUG   Thread-11 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /files/z3467842/uncategorized/e525z2s3/file_stream HTTP/1.1" 200 311
+2019-10-06 11:11:38,917 DEBUG   Thread-11 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /files/z3467842/uncategorized/e525z2s3/file_stream HTTP/1.1" 200 311
+2019-10-06 11:11:40,602 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:40,602 INFO    Thread-6  :184372 [run_manager.py:_on_file_created():662] file/dir created: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-summary.json
+2019-10-06 11:11:40,989 DEBUG   Thread-11 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /files/z3467842/uncategorized/e525z2s3/file_stream HTTP/1.1" 200 311
+2019-10-06 11:11:41,616 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-summary.json
+2019-10-06 11:11:41,617 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-history.jsonl
+2019-10-06 11:11:41,617 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:41,618 INFO    Thread-6  :184372 [run_manager.py:_on_file_created():662] file/dir created: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\model-best.h5
+2019-10-06 11:11:42,622 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\model-best.h5
+2019-10-06 11:11:42,623 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:43,051 DEBUG   Thread-11 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /files/z3467842/uncategorized/e525z2s3/file_stream HTTP/1.1" 200 311
+2019-10-06 11:11:43,639 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\model-best.h5
+2019-10-06 11:11:43,640 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-summary.json
+2019-10-06 11:11:43,640 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-history.jsonl
+2019-10-06 11:11:43,640 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:44,649 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-summary.json
+2019-10-06 11:11:44,650 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-history.jsonl
+2019-10-06 11:11:44,650 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:45,050 DEBUG   Thread-11 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /files/z3467842/uncategorized/e525z2s3/file_stream HTTP/1.1" 200 311
+2019-10-06 11:11:45,656 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-summary.json
+2019-10-06 11:11:45,657 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-history.jsonl
+2019-10-06 11:11:45,658 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:46,663 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-summary.json
+2019-10-06 11:11:46,664 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-history.jsonl
+2019-10-06 11:11:46,664 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\output.log
+2019-10-06 11:11:47,259 DEBUG   Thread-18 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:47,635 DEBUG   Thread-18 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 46
+2019-10-06 11:11:48,048 INFO    MainThread:184372 [run_manager.py:_sync_etc():1319] closing log streams and sending exitcode to W&B
+2019-10-06 11:11:48,049 INFO    MainThread:184372 [run_manager.py:shutdown():1017] shutting down system stats and metadata service
+2019-10-06 11:11:48,280 DEBUG   Thread-11 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /files/z3467842/uncategorized/e525z2s3/file_stream HTTP/1.1" 200 311
+2019-10-06 11:11:48,670 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-metadata.json
+2019-10-06 11:11:48,671 INFO    Thread-6  :184372 [run_manager.py:_on_file_created():662] file/dir created: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-events.jsonl
+2019-10-06 11:11:48,739 INFO    MainThread:184372 [run_manager.py:shutdown():1029] stopping streaming files and file change observer
+2019-10-06 11:11:49,671 INFO    Thread-6  :184372 [run_manager.py:_on_file_modified():673] file/dir modified: C:\Users\aidan\Desktop\left-right\wandb\run-20191006_001131-e525z2s3\wandb-metadata.json
+2019-10-06 11:11:49,691 DEBUG   Thread-48 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:49,705 DEBUG   Thread-46 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:49,952 DEBUG   Thread-48 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 762
+2019-10-06 11:11:49,954 DEBUG   Thread-46 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 793
+2019-10-06 11:11:49,959 DEBUG   Thread-48 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): storage.googleapis.com:443
+2019-10-06 11:11:49,959 DEBUG   Thread-46 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): storage.googleapis.com:443
+2019-10-06 11:11:50,476 DEBUG   Thread-46 :184372 [connectionpool.py:_make_request():393] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/z3467842/uncategorized/e525z2s3/wandb-metadata.json?Expires=1570320769&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=haT4CNolmUn5KjUOeNyD5Fsf5%2B2rWu2N8p2YIPPA4m5pxWuj7XNluxcvEejoI6Sk7Vyquf4e5KV1mVQz8%2FEHAjWOiwNJwxJ9cjthGWkwpzQ5pGM3ESPWNN2XDomtxU02yL2FFuIWB%2B3%2FJY%2Bbx78iS1FsuyQfjucNmrRnzCYsu5qqjWt9OBu0ybL%2BcDxxqsEkDZ4lIgRzvJKwnaAsq8gOBvWR%2FZt9DrFk840xgDz%2F767jadwoKRtRYh3CBNnsyOTd1vH7%2FIRNFo2xM7nXp5XULwbGGMLqzeGVwU1SXH3NvMwf2anOunjK0xHmqD72cjk%2BqXjZo9Ye9axAtEIkeNpceA%3D%3D HTTP/1.1" 200 0
+2019-10-06 11:11:50,514 DEBUG   Thread-48 :184372 [connectionpool.py:_make_request():393] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/z3467842/uncategorized/e525z2s3/output.log?Expires=1570320769&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=Ko2SFMnz5Uk3fnEpI%2F%2FSB5WZuTmKuq462kjceXnzVCiIDpSzHYHnIUucr%2FWuP4Og4KVgvKkli1FJ8z0ovWjrGplHhdJaCjffKBTbXEazKPbkcxkGLWNls9l9KL5Vwnt853C5K4%2ByCAuXVhorNNSKvFAesEXhrVGGyPJ5wp%2B6nc%2F4hYaf7wZR273l0owQvAeLVAvCNrVCIqY%2ByAGm7YKWF%2BsNdA9th2QoMyXtuv9z%2F8hg4maecJxe6rxI%2BlOTR8m57nUVpBwPLnWbartPk9vuWsNvCn7eANigx8bp3wq9m48tW3eW0WKsAgy4P%2BeBxyuOkpiE9j6E2%2F31NlLLYcu6sQ%3D%3D HTTP/1.1" 200 0
+2019-10-06 11:11:50,612 DEBUG   Thread-80 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:50,621 DEBUG   Thread-49 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): api.wandb.ai:443
+2019-10-06 11:11:50,836 DEBUG   Thread-11 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /files/z3467842/uncategorized/e525z2s3/file_stream HTTP/1.1" 200 311
+2019-10-06 11:11:50,840 DEBUG   Thread-80 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 764
+2019-10-06 11:11:50,843 DEBUG   Thread-80 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): storage.googleapis.com:443
+2019-10-06 11:11:50,847 DEBUG   Thread-49 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 776
+2019-10-06 11:11:50,850 DEBUG   Thread-49 :184372 [connectionpool.py:_new_conn():813] Starting new HTTPS connection (1): storage.googleapis.com:443
+2019-10-06 11:11:51,046 DEBUG   Thread-11 :184372 [connectionpool.py:_make_request():393] https://api.wandb.ai:443 "POST /files/z3467842/uncategorized/e525z2s3/file_stream HTTP/1.1" 200 308
+2019-10-06 11:11:51,047 INFO    MainThread:184372 [run_manager.py:_sync_etc():1338] rendering summary
+2019-10-06 11:11:51,098 INFO    MainThread:184372 [run_manager.py:_sync_etc():1369] syncing files to cloud storage
+2019-10-06 11:11:51,383 DEBUG   Thread-49 :184372 [connectionpool.py:_make_request():393] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/z3467842/uncategorized/e525z2s3/wandb-summary.json?Expires=1570320769&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=OweEdEEmwF%2FYuXRtEO1j0Lv6aS4q5GYCosi0vL%2BsAV1gf4d0f6TfRHKNNlzu18kJqAc%2BBu8C3CiuVJ2lCqq2W7zeWN6q9xx8XXnVQG4jh8F7v23MpRnCg87OKbMGx%2Fva7rd8d6O1Gu1PvjSSbrhHtNGcqtIXxb2fCPe1uzP%2B2TGVg3ANFJ%2BIQgd3p2R%2BF7KC1hFNkycXiT9hZzLluZtNvlKv76BzFLZP%2BZb%2Fpj64Xnqy9JgeD0NwKfE%2BLBOqCWcQtiHAYVorlvKTYFKRa0GUjp6zxRZjeici4t6ZdHQgabKbB66Jj144TCtnFLednmRwei8zfScougkFmBV%2B6uvhMA%3D%3D HTTP/1.1" 200 0
+2019-10-06 11:12:17,088 DEBUG   Thread-80 :184372 [connectionpool.py:_make_request():393] https://storage.googleapis.com:443 "PUT /wandb-production.appspot.com/z3467842/uncategorized/e525z2s3/model-best.h5?Expires=1570320769&GoogleAccessId=gorilla-cloud-storage%40wandb-production.iam.gserviceaccount.com&Signature=Hjs3ARgElD5Bjp4iXpQz2ndc%2FAcjQ6LF4TaanDedCBSaQo7oyMjTf6%2FBEiKWTDej1kG7jM3VF%2BYkqlTEdBsRcqzrGyfemV8RYU4Y3p%2Bo2l72WCtkrrm8DI47NbXWq81aoSdRCuf18OYX8Bwg%2FXmzqgZjdOdH%2BsIY1bDcomiy7OLOhk6HCdoPM7kbIk4dgGFmUEO0o4J0lh5dj7vTFF%2B5tXV9%2FVpL%2FzActKccZrUw9hElJwbGSeLDGDIWByjM6Ao4CvWP1cYn%2FNBIH1LoLdcxW1MbXEM1HU68vjbsIjp1TJDI11gqBAzrzMKa5R9P1uUBPVRxTY6Gz52UCBUfdFph9Q%3D%3D HTTP/1.1" 200 0
+2019-10-06 11:12:18,167 INFO    MainThread:184372 [run_manager.py:_sync_etc():1384] syncing complete: https://app.wandb.ai/z3467842/uncategorized/runs/e525z2s3
+2019-10-06 11:12:18,167 INFO    MainThread:184372 [e525z2s3:run_manager.py:_sync_etc():1384] syncing complete: https://app.wandb.ai/z3467842/uncategorized/runs/e525z2s3
