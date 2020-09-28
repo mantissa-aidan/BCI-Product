@@ -4,7 +4,7 @@
 ---
 
 <h1 id="data3888---bci-call-button---dev-version">DATA3888 - BCI Call Button - dev version</h1>
-<p>UPDATE: Final iteration here
+<p>UPDATE: Final iteration here: https://github.com/mantissa-aidan/BCI-Product/blob/master/Neuroprosthetic_Alert_System_(BCI_Nurse_Call_Device).ipynb
 
 <p>A project to create a call button for movement impaired persons. Uses a BYB spike box to track the users eye movements.</p>
 <p>Model training and prediction method is borrowed from <a href="https://github.com/RichardLiuLiu/Spoken_Number_Recognition">RichardLiuLiu</a></p>
